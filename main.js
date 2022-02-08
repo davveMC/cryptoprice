@@ -1,3 +1,5 @@
+console.log("HELLO WORLD")
+
 crypto_wallet = ""
 urls = {
     "twominers":`https://2miners.com/api/accounts/${crypto_wallet}`,
