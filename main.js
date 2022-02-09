@@ -6,17 +6,14 @@ urls = {
     "etherprice":"https://api.coingecko.com/api/v3/coins/markets?vs_currency=sek&ids=ethereum"
 }
 
-// Functions
-function api(url){
-    req = new Request(url)
-    data = await req.loadJSON()
-    return data
-}
-
 // Variables
-etherum_price = api(urls.etherprice)[0].current_price / 1000000
+req = new Request(urls.etherprice)
+data = await req.loadJSON()
+etherum_price = data[0].current_price / 1000000
 // miner values
-miner_data = api(urls.twominers)
+req = new Request(urls.twominers)
+data = await req.loadJSON()
+miner_data = data
 luck = miner_data.currentluck
 workes = Object.keys(miner_data.workers)
 unpaid_balance = miner_data.stats.balance / 1000000000
